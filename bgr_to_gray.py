@@ -15,16 +15,19 @@ if st.button("Done"):
         else:
             success, buffer = cv2.imencode(".png", gray)
     if success:
-        st.download_button(
+        btn=st.download_button(
             label="⬇️ Download Grayscale Image",
             data=buffer.tobytes(),
             file_name="grayscale_image.png",
             mime="image/png"
         )
-        st.success("Image downloaded successfully")
-
+        if btn:
+            st.success("Image downloaded successfully")
+        else:
+            st.warning("Couldn't download image")
     else:
         st.warning("Image not uploaded successfully")
+
 
 
 
