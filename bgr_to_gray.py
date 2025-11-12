@@ -13,9 +13,17 @@ if st.button("Done"):
             st.subheader("Grayscale Image")
             st.image(gray, clamp=True, channels="GRAY")
         else:
-            cv2.imwrite("grayscale.jpg",gray)
+            success, buffer = cv2.imencode(".png", gray)
+    if success:
+        st.download_button(
+            label="⬇️ Download Grayscale Image",
+            data=buffer.tobytes(),
+            file_name="grayscale_image.png",
+            mime="image/png"
+        )
             st.success("Image downloaded successfully")
 
     else:
         st.warning("Image not uploaded successfully")
+
 
