@@ -10,12 +10,12 @@ if st.button("Done"):
         img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
         gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
         if option=="Show":
-            cv2.imshow("Grayscale Image",gray)
-            cv2.waitKey(0)
-            cv2.destroyAllWindows()
+            st.subheader("Grayscale Image")
+            st.image(gray, clamp=True, channels="GRAY")
         else:
             cv2.imwrite("grayscale.jpg",gray)
             st.success("Image downloaded successfully")
 
     else:
         st.warning("Image not uploaded successfully")
+
