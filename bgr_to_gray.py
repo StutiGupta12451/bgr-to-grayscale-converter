@@ -21,12 +21,9 @@ if st.button("Done"):
             file_name="grayscale_image.png",
             mime="image/png"
         )
-        if btn:
-            st.success("Image downloaded successfully")
-        else:
-            st.warning("Couldn't download image")
     else:
         st.warning("Image not uploaded successfully")
+
 
 
 
