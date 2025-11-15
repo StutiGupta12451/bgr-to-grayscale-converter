@@ -21,8 +21,11 @@ if st.button("Done"):
                     file_name="grayscale_image.png",
                     mime="image/png"
                     )
+            else:
+                st.warning("Could not convert the image")
     else:
         st.warning("Image not uploaded\ successfully")
+
 
 
 
