@@ -24,7 +24,8 @@ if st.button("Done"):
             else:
                 st.warning("Could not convert the image")
     else:
-        st.warning("Image not uploaded\ successfully")
+        st.warning("Image not uploaded successfully")
+
 
 
 
